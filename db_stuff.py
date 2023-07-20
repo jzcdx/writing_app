@@ -2,6 +2,19 @@ from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 import os
 
+"""
+DB: 
+day {
+    "words": integer,
+    "timestamp": datetime
+}
+
+persistent_stats {
+    "total_words": integer,
+    "date_started": datetime
+}
+"""
+
 class DB_helper:
     client = None
     guns = None
