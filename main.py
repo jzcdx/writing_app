@@ -1,4 +1,4 @@
-import docx
+import python-docx
 from os import walk
 
 
@@ -16,6 +16,10 @@ def getWordCount(filepath):
 
 
 dir = "C:/Users/Codia/Desktop/royal_road_project/test_folder"
-print(getFileNames(dir))
+file_names = getFileNames(dir);
 
-print(getWordCount("test.docx"))
+total_words = 0;
+for i in file_names:
+    total_words += getWordCount(i)
+
+print("total words: " , total_words)
