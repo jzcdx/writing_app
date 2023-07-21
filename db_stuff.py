@@ -55,10 +55,23 @@ class DB_helper:
         result = self.persistent_stats.find_one({stat: {"$exists": True}})
         result.pop('_id', None)
 
-        return result
+        return {stat: result[stat]}
+
+    def set_stat(self, stat):
+        result = self.persistent_stats.find_one({stat: {"$exists": True}})
+
+    def upsert_stat(self, stat, value):
+        #gun_id = self.guns.insert_one(item).inserted_id
+        
+
+        key = {stat : {"$exists": True}}
+        item = {stat : value}
+        self.persistent_stats.replace_one(key, item, upsert=True);
+        print("new stat UPserted." , stat)
 
 temp = DB_helper()
 
 print(temp.get_stat("words"));
-print(temp.get_stat("start_date"));
+temp.upsert_stat("words", 5);
+#print(temp.get_stat("start_date"));
 #print(datetime.now())
