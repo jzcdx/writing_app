@@ -1,8 +1,6 @@
 import docx
 from os import walk
 
-
-
 def getFileNames(dir): #param: directory
     filenames = next(walk(dir), (None, None, []))[2]  # [] if no file
     return filenames

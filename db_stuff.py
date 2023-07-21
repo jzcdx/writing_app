@@ -1,6 +1,7 @@
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 import os
+from datetime import datetime
 
 """
 DB: 
@@ -17,8 +18,8 @@ persistent_stats {
 
 class DB_helper:
     client = None
-    guns = None
-    all_guns = None
+    persistent_stats = None
+    db = None
 
     def __init__(self):
         self.client = None
@@ -44,6 +45,20 @@ class DB_helper:
         #set values to our database and collection
         #self.all_guns = self.client.all_guns #all_guns is the database
         #self.guns = self.all_guns.guns #guns is the collection (basically a table)
+
+
+        self.db = self.client.story_stats_db #database
+        self.persistent_stats = self.db.persistent_stats #collection
         
 
+    def get_stat(self, stat):
+        result = self.persistent_stats.find_one({stat: {"$exists": True}})
+        result.pop('_id', None)
+
+        return result
+
 temp = DB_helper()
+
+print(temp.get_stat("words"));
+print(temp.get_stat("start_date"));
+#print(datetime.now())
