@@ -73,5 +73,15 @@ temp = DB_helper()
 
 print(temp.get_stat("words"));
 temp.upsert_stat("words", 5);
+
+"""
+TODO:
+-create date:word_count archives
+-collects the updated stats
+-update mongo with the updated stats
+
+"""
+
+
 #print(temp.get_stat("start_date"));
 #print(datetime.now())
