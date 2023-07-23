@@ -80,6 +80,10 @@ TODO:
 -collects the updated stats
 -update mongo with the updated stats
 
+-make frontend
+displayed stats:
+--words/day
+--word plus or minus compared to ytd
 """
 
 
