@@ -84,6 +84,7 @@ TODO:
 displayed stats:
 --words/day
 --word plus or minus compared to ytd
+--graph of previous days and word counts
 """
 
 
