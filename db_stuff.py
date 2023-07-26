@@ -77,8 +77,8 @@ temp.upsert_stat("words", 5);
 """
 TODO:
 -create date:word_count archives
--collects the updated stats
--update mongo with the updated stats
+-collects the current word count
+-update mongo with the current word count for the correspoinding day
 
 
 -make frontend
