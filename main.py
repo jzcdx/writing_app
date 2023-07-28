@@ -1,5 +1,6 @@
 import docx
 from os import walk
+from datetime import datetime
 
 def getFileNames(dir): #param: directory
     filenames = next(walk(dir), (None, None, []))[2]  # [] if no file
@@ -22,6 +23,11 @@ def dailyUpdate():
     #all the functions that we run once a day.
     #Read, get current day, update days, update stat totals
     pass
+
+def getCurDay():
+    #returns the current day, month year in a cut out of datetime.now().
+    pass
+
 
 dir = "C:/Users/Codia/Desktop/royal_road_project/test_folder"
 

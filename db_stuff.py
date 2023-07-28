@@ -12,7 +12,8 @@ day {
 
 persistent_stats {
     "total_words": integer,
-    "date_started": datetime
+    "date_started": datetime,
+    "days_active": integer
 }
 """
 
