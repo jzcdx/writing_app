@@ -14,7 +14,8 @@ persistent_stats {
     "total_words": integer,
     "date_started": datetime,
     "days_active": integer,
-    "last_updated": datetime
+    "last_updated": datetime,
+    "goal", integer
 }
 """
 
