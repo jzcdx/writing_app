@@ -65,7 +65,6 @@ class DB_helper:
 
     def upsert_stat(self, stat, value):
         #gun_id = self.guns.insert_one(item).inserted_id
-        
 
         key = {stat : {"$exists": True}}
         item = {stat : value}

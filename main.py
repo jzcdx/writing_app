@@ -25,14 +25,28 @@ def dailyUpdate():
     pass
 
 def getCurDay():
-    #returns the current day, month year in a cut out of datetime.now().
-    pass
+    #strftime and strptime are different af.
+
+    cur_day = datetime.now()
+    date_string = cur_day.strftime('%Y-%m-%d')
+    parsed_date = datetime.strptime(date_string, '%Y-%m-%d')
+
+    year = str(parsed_date.year)
+    month = str(parsed_date.month)
+    day = str(parsed_date.day)
+
+    date = year + "-" + month + "-" + day
+
+    print("date: " , date)
+    #format: year-month-day, e.g: 2023-7-30 (string)
+    return date
 
 
 dir = "C:/Users/Codia/Desktop/royal_road_project/test_folder"
 
 file_names = getFileNames(dir);
 total_words = getTotalWordCount(file_names)
+
 
 print("total words: " , total_words)
 #print(getWordCount(dir + "/test2.docx"))
