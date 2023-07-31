@@ -64,7 +64,6 @@ class DB_helper:
         result = self.persistent_stats.find_one({stat: {"$exists": True}})
 
     def upsert_stat(self, stat, value):
-        #gun_id = self.guns.insert_one(item).inserted_id
 
         key = {stat : {"$exists": True}}
         item = {stat : value}

@@ -19,14 +19,8 @@ def getTotalWordCount(file_names):
         total_words += getWordCount(dir + "/" + i)
     return total_words
 
-def dailyUpdate():
-    #all the functions that we run once a day.
-    #Read, get current day, update days, update stat totals
-    pass
-
 def getCurDay():
     #strftime and strptime are different af.
-
     cur_day = datetime.now()
     date_string = cur_day.strftime('%Y-%m-%d')
     parsed_date = datetime.strptime(date_string, '%Y-%m-%d')
@@ -41,13 +35,21 @@ def getCurDay():
     #format: year-month-day, e.g: 2023-7-30 (string)
     return date
 
+def dailyUpdate():
+    #all the functions that we run once a day.
+    #Read, get current day, update days, update stat totals
 
-dir = "C:/Users/Codia/Desktop/royal_road_project/test_folder"
-
-file_names = getFileNames(dir);
-total_words = getTotalWordCount(file_names)
+    dir = "C:/Users/Codia/Desktop/royal_road_project/test_folder"
+    file_names = getFileNames(dir);
 
 
-print("total words: " , total_words)
+    total_words = getTotalWordCount(file_names)
+    date = getCurDay()
+
+    
+    pass
+
+
+dailyUpdate()
 #print(getWordCount(dir + "/test2.docx"))
 
