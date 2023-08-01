@@ -21,8 +21,9 @@ persistent_stats {
 
 class DB_helper:
     client = None
-    persistent_stats = None
     db = None
+    persistent_stats = None
+    days = None
 
     def __init__(self):
         self.client = None
@@ -52,7 +53,7 @@ class DB_helper:
 
         self.db = self.client.story_stats_db #database
         self.persistent_stats = self.db.persistent_stats #collection
-        
+        self.days = self.db.days
 
     def get_stat(self, stat):
         result = self.persistent_stats.find_one({stat: {"$exists": True}})
@@ -70,10 +71,17 @@ class DB_helper:
         self.persistent_stats.replace_one(key, item, upsert=True);
         print("new stat UPserted." , stat)
 
+    def date_exists(self, date):
+        cursor = self.days.find({ "date": date})
+        exists = len(list(cursor)) == 1
+        
+        return exists
 temp = DB_helper()
 
 print(temp.get_stat("words"));
-temp.upsert_stat("words", 5);
+#temp.upsert_stat("words", 5);
+temp.date_exists("2023-7-31")
+ 
 
 """
 TODO:

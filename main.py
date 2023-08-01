@@ -1,6 +1,7 @@
 import docx
 from os import walk
 from datetime import datetime
+from db_stuff import DB_helper
 
 def getFileNames(dir): #param: directory
     filenames = next(walk(dir), (None, None, []))[2]  # [] if no file
@@ -13,10 +14,11 @@ def getWordCount(filename):
         fullText.append(para.text)
     return len("\n".join(fullText).split(" "))
 
-def getTotalWordCount(file_names):
+def getTotalWordCount(file_names, dir):
     total_words = 0;
     for i in file_names:
         total_words += getWordCount(dir + "/" + i)
+        #getWordCount(dir + "/" + i)
     return total_words
 
 def getCurDay():
@@ -31,9 +33,19 @@ def getCurDay():
 
     date = year + "-" + month + "-" + day
 
-    print("date: " , date)
     #format: year-month-day, e.g: 2023-7-30 (string)
     return date
+
+
+def updateDay(date, total_words):
+    print("hi: " , date , total_words )
+    dbh = DB_helper()
+    
+    print("date exists:" , dbh.date_exists(date))
+    pass
+
+def updateStats():
+    pass
 
 def dailyUpdate():
     #all the functions that we run once a day.
@@ -43,9 +55,10 @@ def dailyUpdate():
     file_names = getFileNames(dir);
 
 
-    total_words = getTotalWordCount(file_names)
+    total_words = getTotalWordCount(file_names, dir)
     date = getCurDay()
-
+    date = "2023-7-28"
+    updateDay(date, total_words)
     
 
 
