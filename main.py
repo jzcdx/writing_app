@@ -47,7 +47,6 @@ def dailyUpdate():
     date = getCurDay()
 
     
-    pass
 
 
 dailyUpdate()
