@@ -38,10 +38,11 @@ def getCurDay():
 
 
 def updateDay(date, total_words):
-    print("hi: " , date , total_words )
     dbh = DB_helper()
+    has_day_record = dbh.date_exists(date)
     
-    print("date exists:" , dbh.date_exists(date))
+    #if (not has_day_record):
+        
     pass
 
 def updateStats():
@@ -57,7 +58,7 @@ def dailyUpdate():
 
     total_words = getTotalWordCount(file_names, dir)
     date = getCurDay()
-    date = "2023-7-28"
+
     updateDay(date, total_words)
     
 

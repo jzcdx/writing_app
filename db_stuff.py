@@ -76,12 +76,22 @@ class DB_helper:
         exists = len(list(cursor)) == 1
         
         return exists
+
+    def insert_date(self, date, words):
+        key = {"date" : date}
+        #item = {"words" : words}
+        insert_me = { "date": date, "words" : words }
+        self.days.replace_one(key, insert_me, upsert=True);
+
 temp = DB_helper()
+
 
 print(temp.get_stat("words"));
 #temp.upsert_stat("words", 5);
 temp.date_exists("2023-7-31")
  
+temp.insert_date("2023-07-32", 9999)
+
 
 """
 TODO:
