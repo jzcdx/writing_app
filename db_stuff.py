@@ -65,7 +65,6 @@ class DB_helper:
         result = self.persistent_stats.find_one({stat: {"$exists": True}})
 
     def upsert_stat(self, stat, value):
-
         key = {stat : {"$exists": True}}
         item = {stat : value}
         self.persistent_stats.replace_one(key, item, upsert=True);
@@ -79,7 +78,6 @@ class DB_helper:
 
     def insert_date(self, date, words):
         key = {"date" : date}
-        #item = {"words" : words}
         insert_me = { "date": date, "words" : words }
         self.days.replace_one(key, insert_me, upsert=True);
 
@@ -90,7 +88,7 @@ print(temp.get_stat("words"));
 #temp.upsert_stat("words", 5);
 temp.date_exists("2023-7-31")
  
-temp.insert_date("2023-07-32", 9999)
+#temp.insert_date("2023-7-32", 9999)
 
 
 """
