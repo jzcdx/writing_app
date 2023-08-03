@@ -64,5 +64,4 @@ def dailyUpdate():
 
 
 dailyUpdate()
-#print(getWordCount(dir + "/test2.docx"))
 
