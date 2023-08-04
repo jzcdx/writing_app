@@ -41,8 +41,9 @@ def updateDay(date, total_words):
     dbh = DB_helper()
     has_day_record = dbh.date_exists(date)
     
-    #if (not has_day_record):
+    if (not has_day_record):
         #upsert in mongo
+        pass
     pass
 
 def updateStats():
