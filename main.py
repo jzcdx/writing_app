@@ -18,7 +18,6 @@ def getTotalWordCount(file_names, dir):
     total_words = 0;
     for i in file_names:
         total_words += getWordCount(dir + "/" + i)
-        #getWordCount(dir + "/" + i)
     return total_words
 
 def getCurDay():
