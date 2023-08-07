@@ -20,8 +20,10 @@ def getTotalWordCount(file_names, dir):
         total_words += getWordCount(dir + "/" + i)
     return total_words
 
+
+
 def getCurDay():
-    #strftime and strptime are different af.
+    #strftime and strptime are different, don't confuse the two.
     cur_day = datetime.now()
     date_string = cur_day.strftime('%Y-%m-%d')
     parsed_date = datetime.strptime(date_string, '%Y-%m-%d')
