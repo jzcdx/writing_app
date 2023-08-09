@@ -87,7 +87,6 @@ temp = DB_helper()
 print(temp.get_stat("words"));
 temp.date_exists("2023-7-31")
  
-#temp.insert_date("2023-7-32", 9999)
 
 
 """
