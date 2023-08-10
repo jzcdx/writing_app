@@ -107,5 +107,3 @@ displayed stats:
 """
 
 
-#print(temp.get_stat("start_date"));
-#print(datetime.now())
