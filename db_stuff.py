@@ -49,7 +49,7 @@ class DB_helper:
         #set values to our database and collection
         #self.all_guns = self.client.all_guns #all_guns is the database
         #self.guns = self.all_guns.guns #guns is the collection (basically a table)
-
+        #collection is a table
 
         self.db = self.client.story_stats_db #database
         self.persistent_stats = self.db.persistent_stats #collection
