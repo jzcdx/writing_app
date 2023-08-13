@@ -15,7 +15,9 @@ persistent_stats {
     "date_started": datetime,
     "days_active": integer,
     "last_updated": datetime,
-    "goal", integer
+    
+    "daily_goal", integer,
+    "monthly_goal", integer
 }
 """
 
