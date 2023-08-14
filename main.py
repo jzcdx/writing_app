@@ -7,7 +7,7 @@ def getFileNames(dir): #param: directory
     filenames = next(walk(dir), (None, None, []))[2]  # [] if no file
     return filenames
 
-def getWordCount(filename):
+def getWordCount(filename): #filename is a string
     doc = docx.Document(filename)
     fullText = []
     for para in doc.paragraphs:
