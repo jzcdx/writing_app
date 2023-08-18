@@ -50,6 +50,7 @@ def updateDay(date, total_words):
     pass
 
 def updateStats():
+    #might make the particular stat a param so you can just update one.
     pass
 
 def dailyUpdate():
