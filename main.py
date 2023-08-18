@@ -42,7 +42,7 @@ def updateDay(date, total_words):
     dbh = DB_helper()
     has_day_record = dbh.date_exists(date) #we check if the date has been updated for the day yet. this shouldn't 
     #return false if we schedule our cron properly
-    #maybe we shouldn't even check the condition. Maybe print an error message?
+    #maybe we shouldn't even check the condition.
 
     if (not has_day_record):
         #update in mongo
