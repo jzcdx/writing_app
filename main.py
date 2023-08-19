@@ -26,7 +26,7 @@ def getCurDay():
     #strftime and strptime are different, don't confuse the two.
     cur_day = datetime.now()
     date_string = cur_day.strftime('%Y-%m-%d')
-    parsed_date = datetime.strptime(date_string, '%Y-%m-%d')
+    parsed_date = datetime.strptime(date_string, '%Y-%m-%d') #this is where we can easily pull the specifics from
 
     year = str(parsed_date.year)
     month = str(parsed_date.month)
