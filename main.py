@@ -66,6 +66,6 @@ def dailyUpdate():
     updateDay(date, total_words)
     
 
-
+#this is gonna just be a quick and easy hub to start our cron from
 dailyUpdate()
 
