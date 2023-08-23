@@ -97,6 +97,7 @@ TODO:
 -collects the current word count
 -update mongo with the current word count for the correspoinding day
 
+-look into crons
 
 -make frontend
 displayed stats:
