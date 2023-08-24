@@ -14,7 +14,7 @@ def getWordCount(filename): #filename is a string
         fullText.append(para.text)
     return len("\n".join(fullText).split(" "))
 
-def getTotalWordCount(file_names, dir):
+def getTotalWordCount(file_names, dir): #takes list of files and then runs getWordCount per
     total_words = 0;
     for i in file_names:
         total_words += getWordCount(dir + "/" + i)
