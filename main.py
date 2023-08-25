@@ -38,7 +38,7 @@ def getCurDay():
     return date
 
 
-def updateDay(date, total_words):
+def updateDay(date, total_words): #updates a single day
     dbh = DB_helper()
     has_day_record = dbh.date_exists(date) #we check if the date has been updated for the day yet. this shouldn't 
     #return false if we schedule our cron properly
