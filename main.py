@@ -45,7 +45,7 @@ def updateDay(date, total_words): #updates a single day
     #return false if we schedule our cron properly
 
     if (not has_day_record):
-        #update in mongo
+        #update in mongo through db_stuff
         pass
     pass
 
