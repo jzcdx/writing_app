@@ -34,7 +34,8 @@ def getCurDay():
 
     date = year + "-" + month + "-" + day
 
-    #format: year-month-day, e.g: 2023-7-30 (string)
+    #format order: year-month-day, 
+    #e.g: 2023-7-30 (string)
     return date
 
 
