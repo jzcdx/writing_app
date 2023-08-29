@@ -55,7 +55,7 @@ def updateStats():
 
 def dailyUpdate():
     #all the functions that we run once a day.
-    #Read, get current day, update days, update stat totals. mbf
+    #Read, get current day, update days, update stat totals. 
 
     dir = "C:/Users/Codia/Desktop/royal_road_project/test_folder"
     file_names = getFileNames(dir);
